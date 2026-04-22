@@ -52,7 +52,7 @@ const DriveCalendar = () => {
 
   // Fetch drives
   useEffect(() => {
-    axios.get("http://localhost:8080/api/drives")
+    axios.get("https://hirepath-backend-z804.onrender.com/api/drives")
       .then(res => setDrives(res.data));
   }, []);
 
@@ -60,7 +60,7 @@ const DriveCalendar = () => {
   useEffect(() => {
     if (!studentId) return;
 
-    axios.get(`http://localhost:8080/api/applications/student/${studentId}`)
+    axios.get(`https://hirepath-backend-z804.onrender.com/api/applications/student/${studentId}`)
       .then(res => setApplications(res.data));
   }, [studentId]);
 

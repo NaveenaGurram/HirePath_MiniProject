@@ -42,7 +42,7 @@ const ProfilePage = () => {
     if (!user) return;
 
     axios
-      .get(`http://localhost:8080/api/users/${user.id}`)
+      .get(`https://hirepath-backend-z804.onrender.com/api/users/${user.id}`)
       .then((res) => {
         setProfile(res.data);
         setResumePath(res.data.resumePath || "");
@@ -59,7 +59,7 @@ const ProfilePage = () => {
   const handleSave = async () => {
   try {
     await axios.put(
-      `http://localhost:8080/api/users/${user?.id}`,
+      `https://hirepath-backend-z804.onrender.com/api/users/${user?.id}`,
       profile
     );
 
@@ -93,7 +93,7 @@ const ProfilePage = () => {
       const formData = new FormData();
       formData.append("file", file);
       const res = await axios.post(
-        `http://localhost:8080/api/users/${user.id}/resume`,
+        `https://hirepath-backend-z804.onrender.com/api/users/${user.id}/resume`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -111,7 +111,7 @@ const ProfilePage = () => {
     if (!user?.id) return;
     try {
       setDeleting(true);
-      await axios.delete(`http://localhost:8080/api/users/${user.id}/resume`);
+      await axios.delete(`https://hirepath-backend-z804.onrender.com/api/users/${user.id}/resume`);
       setResumePath("");
       toast({ title: "Resume deleted successfully" });
     } catch (error) {
@@ -265,7 +265,7 @@ const ProfilePage = () => {
                 {resumePath && user?.id && (
                   <div className="mt-3 flex justify-center gap-3">
                     <a
-                      href={`http://localhost:8080/api/users/${user.id}/resume`}
+                      href={`https://hirepath-backend-z804.onrender.com/api/users/${user.id}/resume`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-sm text-primary underline"

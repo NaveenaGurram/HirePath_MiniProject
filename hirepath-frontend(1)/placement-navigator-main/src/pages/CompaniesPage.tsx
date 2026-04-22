@@ -25,7 +25,7 @@ const CompaniesPage = () => {
 
   // 🔹 Fetch from backend
   useEffect(() => {
-    axios.get("http://localhost:8080/api/companies")
+    axios.get("https://hirepath-backend-z804.onrender.com/api/companies")
       .then(res => setCompanies(res.data));
   }, []);
 

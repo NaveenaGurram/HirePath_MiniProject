@@ -29,7 +29,7 @@ import com.hirepath.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = {"http://localhost:8081", "http://localhost:5173", "http://127.0.0.1:5173"})
+@CrossOrigin(origins = "*")
 public class UserController {
     private static final Path RESUME_UPLOAD_DIR = Paths.get("uploads");
 

@@ -56,7 +56,7 @@ const ManageDrives = () => {
 
   // 🔹 Fetch Drives
   const fetchDrives = () => {
-    axios.get("http://localhost:8080/api/drives")
+    axios.get("https://hirepath-backend-z804.onrender.com/api/drives")
       .then(res => setDrives(res.data));
   };
 
@@ -66,7 +66,7 @@ const ManageDrives = () => {
 
   // 🔹 Add Drive
   const handleAddDrive = async () => {
-    await axios.post("http://localhost:8080/api/admin/drive", {
+    await axios.post("https://hirepath-backend-z804.onrender.com/api/admin/drive", {
       companyName: formData.companyName,
       role: formData.role,
       date: formData.date,
@@ -87,7 +87,7 @@ const ManageDrives = () => {
     if (!editingDrive) return;
 
     await axios.put(
-      `http://localhost:8080/api/admin/drive/${editingDrive.id}`,
+      `https://hirepath-backend-z804.onrender.com/api/admin/drive/${editingDrive.id}`,
       {
         companyName: formData.companyName,
         role: formData.role,
@@ -108,7 +108,7 @@ const ManageDrives = () => {
 
   // 🔹 Delete Drive
   const handleDelete = async (id: number) => {
-    await axios.delete(`http://localhost:8080/api/admin/drive/${id}`);
+    await axios.delete(`https://hirepath-backend-z804.onrender.com/api/admin/drive/${id}`);
     fetchDrives();
   };
 

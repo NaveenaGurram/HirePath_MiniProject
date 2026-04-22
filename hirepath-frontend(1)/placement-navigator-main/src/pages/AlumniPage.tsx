@@ -28,7 +28,7 @@ const AlumniPage = () => {
   const [alumni, setAlumni] = useState<Alumni[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/alumni").then((res) => setAlumni(res.data));
+    axios.get("https://hirepath-backend-z804.onrender.com/api/alumni").then((res) => setAlumni(res.data));
   }, []);
 
   const filtered = alumni.filter((a) => {

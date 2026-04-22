@@ -35,7 +35,7 @@ const ManageAlumni = () => {
   const [form, setForm] = useState(emptyForm);
 
   const fetchAlumni = () => {
-    axios.get("http://localhost:8080/api/alumni").then((res) => setAlumni(res.data));
+    axios.get("https://hirepath-backend-z804.onrender.com/api/alumni").then((res) => setAlumni(res.data));
   };
 
   useEffect(() => {
@@ -43,13 +43,13 @@ const ManageAlumni = () => {
   }, []);
 
   const addAlumni = async () => {
-    await axios.post("http://localhost:8080/api/alumni", form);
+    await axios.post("https://hirepath-backend-z804.onrender.com/api/alumni", form);
     setForm(emptyForm);
     fetchAlumni();
   };
 
   const removeAlumni = async (id: number) => {
-    await axios.delete(`http://localhost:8080/api/alumni/${id}`);
+    await axios.delete(`https://hirepath-backend-z804.onrender.com/api/alumni/${id}`);
     fetchAlumni();
   };
 

@@ -53,7 +53,7 @@ const ManageCompanies = () => {
   // 🔹 Fetch Companies
   const fetchCompanies = () => {
     axios
-      .get("http://localhost:8080/api/companies")
+      .get("https://hirepath-backend-z804.onrender.com/api/companies")
       .then((res) => setCompanies(res.data));
   };
 
@@ -63,7 +63,7 @@ const ManageCompanies = () => {
 
   // 🔹 Handle Add Company
   const handleAddCompany = async () => {
-    await axios.post("http://localhost:8080/api/admin/company", {
+    await axios.post("https://hirepath-backend-z804.onrender.com/api/admin/company", {
       name: formData.name,
       industry: formData.industry,
       minCgpa: parseFloat(formData.minCgpa),
@@ -83,7 +83,7 @@ const ManageCompanies = () => {
     if (!editingCompany) return;
 
     await axios.put(
-      `http://localhost:8080/api/admin/company/${editingCompany.id}`,
+      `https://hirepath-backend-z804.onrender.com/api/admin/company/${editingCompany.id}`,
       {
         name: formData.name,
         industry: formData.industry,
@@ -103,7 +103,7 @@ const ManageCompanies = () => {
   // 🔹 Handle Delete
   const handleDelete = async (id: number) => {
     await axios.delete(
-      `http://localhost:8080/api/admin/company/${id}`
+      `https://hirepath-backend-z804.onrender.com/api/admin/company/${id}`
     );
     fetchCompanies();
   };

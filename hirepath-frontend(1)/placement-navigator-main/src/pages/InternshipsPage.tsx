@@ -25,7 +25,7 @@ const InternshipsPage = () => {
 
   // Fetch batches
   useEffect(() => {
-    fetch("http://localhost:8080/api/internships/batches")
+    fetch("https://hirepath-backend-z804.onrender.com/api/internships/batches")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -39,7 +39,7 @@ const InternshipsPage = () => {
   useEffect(() => {
     if (!batch) return;
 
-    fetch(`http://localhost:8080/api/internships/${batch}`)
+    fetch(`https://hirepath-backend-z804.onrender.com/api/internships/${batch}`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setStudents(data);

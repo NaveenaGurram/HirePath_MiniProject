@@ -25,7 +25,7 @@ const CompanyDetail = () => {
   useEffect(() => {
     if (!id) return;
     axios
-      .get(`http://localhost:8080/api/companies/${id}`)
+      .get(`https://hirepath-backend-z804.onrender.com/api/companies/${id}`)
       .then((res) => setCompany(res.data));
   }, [id]);
 

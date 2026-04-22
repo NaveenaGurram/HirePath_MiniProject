@@ -30,8 +30,8 @@ export function Header() {
       try {
         if (role === "student" && user?.id) {
           const [appsRes, drivesRes] = await Promise.all([
-            axios.get(`http://localhost:8080/api/applications/student/${user.id}`),
-            axios.get("http://localhost:8080/api/drives"),
+            axios.get(`https://hirepath-backend-z804.onrender.com/api/applications/student/${user.id}`),
+            axios.get("https://hirepath-backend-z804.onrender.com/api/drives"),
           ]);
 
           const appNotifications: NotificationItem[] = appsRes.data.map((app: any) => ({

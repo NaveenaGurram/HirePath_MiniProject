@@ -58,14 +58,14 @@ const ExperiencesPage = () => {
 
   const fetchApprovedExperiences = () => {
     axios
-      .get("http://localhost:8080/api/experiences")
+      .get("https://hirepath-backend-z804.onrender.com/api/experiences")
       .then((res) => setExperiences(res.data));
   };
 
   const fetchMyExperiences = () => {
     if (!loggedInUser?.id) return;
     axios
-      .get(`http://localhost:8080/api/experiences/student/${loggedInUser.id}`)
+      .get(`https://hirepath-backend-z804.onrender.com/api/experiences/student/${loggedInUser.id}`)
       .then((res) => setMyExperiences(res.data));
   };
 
@@ -108,7 +108,7 @@ const ExperiencesPage = () => {
 
       if (editingExperienceId) {
         await axios.put(
-          `http://localhost:8080/api/experiences/${editingExperienceId}`,
+          `https://hirepath-backend-z804.onrender.com/api/experiences/${editingExperienceId}`,
           {
             companyName,
             role,
@@ -124,7 +124,7 @@ const ExperiencesPage = () => {
         toast({ title: "Experience updated and sent for re-approval" });
       } else {
         await axios.post(
-          "http://localhost:8080/api/experiences",
+          "https://hirepath-backend-z804.onrender.com/api/experiences",
           {
             companyName,
             role,

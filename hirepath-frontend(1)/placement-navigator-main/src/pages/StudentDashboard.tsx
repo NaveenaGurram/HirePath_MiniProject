@@ -40,13 +40,13 @@ const StudentDashboard = () => {
   useEffect(() => {
     if (!loggedInStudentId) return;
 
-    axios.get(`http://localhost:8080/api/users/${loggedInStudentId}`)
+    axios.get(`https://hirepath-backend-z804.onrender.com/api/users/${loggedInStudentId}`)
       .then(res => setStudent(res.data));
 
-    axios.get(`http://localhost:8080/api/applications/student/${loggedInStudentId}`)
+    axios.get(`https://hirepath-backend-z804.onrender.com/api/applications/student/${loggedInStudentId}`)
       .then(res => setApplications(res.data));
 
-    axios.get("http://localhost:8080/api/drives")
+    axios.get("https://hirepath-backend-z804.onrender.com/api/drives")
       .then(res => setDrives(res.data));
   }, [loggedInStudentId]);
 

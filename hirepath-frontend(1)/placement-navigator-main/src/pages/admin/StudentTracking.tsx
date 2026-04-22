@@ -134,7 +134,7 @@ const StudentTracking = () => {
                     <TableCell>
                       {a.student.resumePath ? (
                         <a
-                          href={`http://localhost:8080/api/users/${a.student.id}/resume`}
+                          href={`https://hirepath-backend-z804.onrender.com/api/users/${a.student.id}/resume`}
                           target="_blank"
                           rel="noreferrer"
                           className="text-primary underline text-sm"

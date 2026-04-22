@@ -26,7 +26,7 @@ import com.hirepath.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/admin")
-@CrossOrigin(origins = {"http://localhost:8081", "http://localhost:5173", "http://127.0.0.1:5173"})
+@CrossOrigin(origins = "*")
 public class AdminController {
 
 	@Autowired

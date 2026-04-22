@@ -33,7 +33,7 @@ const DriveDetailsPage = () => {
   const studentId = loggedInUser?.id;
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/drives/${id}`)
+    axios.get(`https://hirepath-backend-z804.onrender.com/api/drives/${id}`)
       .then(res => setDrive(res.data));
 
     if (studentId) {

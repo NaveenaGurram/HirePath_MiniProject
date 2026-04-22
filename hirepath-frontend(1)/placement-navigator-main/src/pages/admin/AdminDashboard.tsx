@@ -24,13 +24,13 @@ const AdminDashboard = () => {
   const [statusData, setStatusData] = useState<any[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/admin/stats")
+    axios.get("https://hirepath-backend-z804.onrender.com/api/admin/stats")
       .then(res => setStats(res.data));
 
-    axios.get("http://localhost:8080/api/admin/branch-stats")
+    axios.get("https://hirepath-backend-z804.onrender.com/api/admin/branch-stats")
       .then(res => setBranchData(res.data));
 
-    axios.get("http://localhost:8080/api/admin/status-stats")
+    axios.get("https://hirepath-backend-z804.onrender.com/api/admin/status-stats")
       .then(res => {
         const formatted = Object.entries(res.data).map(([key, value]) => ({
           name: key,

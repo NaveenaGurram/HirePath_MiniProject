@@ -30,8 +30,8 @@ const ApproveExperiences = () => {
 
   const fetchExperiences = () => {
     Promise.all([
-      axios.get("http://localhost:8080/api/admin/experiences?status=PENDING"),
-      axios.get("http://localhost:8080/api/admin/experiences?status=APPROVED"),
+      axios.get("https://hirepath-backend-z804.onrender.com/api/admin/experiences?status=PENDING"),
+      axios.get("https://hirepath-backend-z804.onrender.com/api/admin/experiences?status=APPROVED"),
     ]).then(([pendingRes, approvedRes]) => {
       setPendingExperiences(pendingRes.data);
       setApprovedExperiences(approvedRes.data);
@@ -49,11 +49,11 @@ const ApproveExperiences = () => {
     try {
       if (action === "approve") {
         await axios.put(
-          `http://localhost:8080/api/experiences/${id}/approve`
+          `https://hirepath-backend-z804.onrender.com/api/experiences/${id}/approve`
         );
       } else {
         await axios.delete(
-          `http://localhost:8080/api/admin/experiences/${id}`
+          `https://hirepath-backend-z804.onrender.com/api/admin/experiences/${id}`
         );
       }
 

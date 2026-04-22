@@ -27,7 +27,7 @@ const RegisterPage = () => {
     }
 
     try {
-      await axios.post("http://localhost:8080/api/auth/register", {
+      await axios.post("https://hirepath-backend-z804.onrender.com/api/auth/register", {
         email,
         password,
       });

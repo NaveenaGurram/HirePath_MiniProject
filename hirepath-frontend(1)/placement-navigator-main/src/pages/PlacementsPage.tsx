@@ -31,7 +31,7 @@ const PlacementsPage = () => {
   setSelectedCompany(company);
 
   fetch(
-    `http://localhost:8080/api/placements/${batch}/company/${encodeURIComponent(company)}`
+    `https://hirepath-backend-z804.onrender.com/api/placements/${batch}/company/${encodeURIComponent(company)}`
   )
     .then((res) => res.json())
     .then((data) => setCompanyStudents(data))
@@ -40,7 +40,7 @@ const PlacementsPage = () => {
 
   // ✅ Fetch batches from backend
   useEffect(() => {
-    fetch("http://localhost:8080/api/placements/batches")
+    fetch("https://hirepath-backend-z804.onrender.com/api/placements/batches")
       .then((res) => res.json())
       .then((data) => {
         setBatches(data);
@@ -59,12 +59,12 @@ const PlacementsPage = () => {
     const fetchData = async () => {
       try {
         const res1 = await fetch(
-          `http://localhost:8080/api/placements/${batch}`
+          `https://hirepath-backend-z804.onrender.com/api/placements/${batch}`
         );
         const data1 = await res1.json();
 
         const res2 = await fetch(
-          `http://localhost:8080/api/placements/${batch}/companies`
+          `https://hirepath-backend-z804.onrender.com/api/placements/${batch}/companies`
         );
         const data2 = await res2.json();
 
